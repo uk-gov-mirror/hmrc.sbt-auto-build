@@ -66,14 +66,10 @@ object SbtAutoBuildPlugin extends AutoPlugin {
 }
 
 object Resolvers {
-
-  val HmrcReleasesRepo = Resolver.bintrayRepo("hmrc", "releases")
-
   def apply(): Def.Setting[Seq[Resolver]] =
     resolvers := Seq(
       Opts.resolver.sonatypeReleases,
-      Resolver.typesafeRepo("releases"),
-      HmrcReleasesRepo
+      Resolver.typesafeRepo("releases")
     )
 }
 
